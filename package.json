@@ -4,18 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src/app.js --out-file=public/scripts/app.js --presets=@babel/preset-env,@babel/preset-react"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dim4ik2911/indecision.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@babel/preset-env": "^7.15.0",
-    "@babel/preset-react": "^7.14.5",
-    "live-server": "^1.2.1"
+  "bugs": {
+    "url": "https://github.com/dim4ik2911/indecision/issues"
   },
+  "homepage": "https://github.com/dim4ik2911/indecision#readme",
   "devDependencies": {
     "@babel/cli": "^7.14.8",
-    "@babel/core": "^7.15.0"
-  }
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5"
+  },
+  "dependencies": {}
 }

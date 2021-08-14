@@ -51,6 +51,7 @@ const templateTwo = (
     <button onClick={addOne}>+1</button>
     <button onClick={subtractOne}>-1</button>
     <button onClick={resetOne}>Reset</button>
+    <p>It works</p>
   </div>
 );
 console.log(templateTwo);

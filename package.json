@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel src/playground/es6_arrow_function_2.js --out-file=public/scripts/app.js --presets=@babel/preset-env,@babel/preset-react --watch"
+    "build": "babel src/app.js --out-file=public/scripts/app.js --presets=@babel/preset-env,@babel/preset-react --watch"
   },
   "repository": {
     "type": "git",

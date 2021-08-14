@@ -1,44 +1,51 @@
 "use strict";
 
-var _arguments = typeof arguments === "undefined" ? void 0 : arguments;
-
-// arguments object - no longer bound with arrow functions
-var add = function add(a, b) {
-  console.log(arguments);
-  return a + b;
+//JSX - javascript syntax extension
+var app = {
+  title: "Indecision app!",
+  subtitle: "Let's try!",
+  options: ["one", "two"]
 };
-
-var add2 = function add2(a, b) {
-  console.log(_arguments);
-  return a + b;
-}; //works
-
-
-console.log(add(2, 5)); //does not work
-
-console.log(add2(2, 6)); // this keyword - no longer bound
-
+var template = /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, app.title), app.subtitle && /*#__PURE__*/React.createElement("p", null, app.subtitle), /*#__PURE__*/React.createElement("p", null, app.options.length > 0 ? "Here are your options" : "No options"), /*#__PURE__*/React.createElement("ol", null, /*#__PURE__*/React.createElement("li", null, "Item one"), /*#__PURE__*/React.createElement("li", null, "Item two")));
 var user = {
-  name: "Andrew",
-  cities: ["Boston", "New York", "Dublin"],
-  printPlacesLived: function printPlacesLived() {
-    var andrewsCities = this.cities.map(function (city) {
-      return "Andrew lived in ".concat(city);
-    });
-    return andrewsCities;
-  }
+  name: "John",
+  age: 27,
+  location: "London"
 };
-console.log(user.printPlacesLived()); //Challenge area
+var userName = "Mike";
+var userAge = 17;
+var userLocation = "Boston";
 
-var multiplier = {
-  numbers: [1, 2, 3],
-  multiplyBy: 2,
-  multiply: function multiply() {
-    var _this = this;
-
-    return this.numbers.map(function (number) {
-      return number * _this.multiplyBy;
-    });
+function getLocation(location) {
+  if (location) {
+    return /*#__PURE__*/React.createElement("p", null, "Location: ", location);
   }
+
+  return undefined;
+}
+
+var count = 0;
+var someId = "myidhere";
+
+var addOne = function addOne() {
+  console.log("addOne");
 };
-console.log(multiplier.multiply());
+
+var subtractOne = function subtractOne() {
+  console.log("subtractOne");
+};
+
+var resetOne = function resetOne() {
+  console.log("resetOne");
+};
+
+var templateTwo = /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, "Count: ", count), /*#__PURE__*/React.createElement("button", {
+  onClick: addOne
+}, "+1"), /*#__PURE__*/React.createElement("button", {
+  onClick: subtractOne
+}, "-1"), /*#__PURE__*/React.createElement("button", {
+  onClick: resetOne
+}, "Reset"));
+console.log(templateTwo);
+var appRoot = document.getElementById("app");
+ReactDOM.render(templateTwo, appRoot);

@@ -35,26 +35,33 @@ function getLocation(location) {
 let count = 0;
 const someId = "myidhere";
 const addOne = () => {
-  console.log("addOne");
+  count++;
+  renderCounterApp();
 };
 
 const subtractOne = () => {
-  console.log("subtractOne");
+  count--;
+  renderCounterApp();
 };
 
 const resetOne = () => {
-  console.log("resetOne");
+  count = 0;
+  renderCounterApp();
 };
-const templateTwo = (
-  <div>
-    <h1>Count: {count}</h1>
-    <button onClick={addOne}>+1</button>
-    <button onClick={subtractOne}>-1</button>
-    <button onClick={resetOne}>Reset</button>
-  
-  </div>
-);
-console.log(templateTwo);
+
 const appRoot = document.getElementById("app");
 
-ReactDOM.render(templateTwo, appRoot);
+const renderCounterApp = () => {
+  const templateTwo = (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={addOne}>+1</button>
+      <button onClick={subtractOne}>-1</button>
+      <button onClick={resetOne}>Reset</button>
+    </div>
+  );
+
+  ReactDOM.render(templateTwo, appRoot);
+};
+
+renderCounterApp();

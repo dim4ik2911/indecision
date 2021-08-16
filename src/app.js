@@ -1,58 +1,37 @@
-const appRoot = document.getElementById("app");
-//JSX - javascript syntax extension
-const app = {
-  title: "Indecision app!",
-  subtitle: "Let's try!",
-  options: [],
-};
-
-const onFormSubmit = (e) => {
-  e.preventDefault();
-  const option = e.target.elements.option.value;
-  if (option) {
-    app.options.push(option);
-    e.target.elements.option.value = "";
-    render();
+class Header extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Indecision</h1>
+        <h2>Put your life in the hands of a computer</h2>
+      </div>
+    );
   }
-};
+}
 
-const onRemoveAll = () => {
-  app.options = [];
-  render();
-};
+class Action extends React.Component {
+  render() {
+    return <button>What should I do?</button>;
+  }
+}
 
-const onMakeDecision = () => {
-  const randomNum = Math.floor(Math.random() * app.options.length);
-  const option = app.options[randomNum];
-  alert(option);
-};
+class Options extends React.Component {
+  render() {
+    return <p>Options are here</p>;
+  }
+}
 
-const render = () => {
-  const template = (
-    <div>
-      <h1>{app.title}</h1>
-      {app.subtitle && <p>{app.subtitle}</p>}
-      <p>{app.options.length > 0 ? "Here are your options" : "No options"}</p>
-      <p>{app.options.length}</p>
-      <button disabled={app.options.length === 0} onClick={onMakeDecision}>
-        What should I do?
-      </button>
-      <button onClick={onRemoveAll}>Remove all</button>
-
-      <ol>
-        {app.options.map((option) => (
-          <li key={option}>{option}</li>
-        ))}
-      </ol>
-
-      <form onSubmit={onFormSubmit}>
-        <input type="text" name="option" />
-        <button>Add Option</button>
-      </form>
-    </div>
-  );
-
-  ReactDOM.render(template, appRoot);
-};
-
-render();
+class AddOption extends React.Component {
+  render() {
+    return <p>Add option</p>;
+  }
+}
+const jsx = (
+  <div>
+    <Header />
+    <Action />
+    <Options />
+    <AddOption />
+  </div>
+);
+ReactDOM.render(jsx, document.getElementById("app"));

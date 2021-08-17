@@ -67,7 +67,19 @@ var Counter = /*#__PURE__*/function (_React$Component) {
         return {
           count: 0
         };
-      });
+      }); //example of second setState alternative
+      // this.setState((prevState) => {
+      //   return {
+      //     count: prevState.count + 1,
+      //   };
+      // });
+      //alternatvie setState Syntax
+      // this.setState({
+      //   count: 0,
+      // });
+      // this.setState({
+      //   count: this.state.count + 1,
+      // });
     }
   }, {
     key: "render",

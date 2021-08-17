@@ -105,22 +105,28 @@ var Options = /*#__PURE__*/function (_React$Component4) {
 
   var _super4 = _createSuper(Options);
 
-  function Options() {
+  //method bind open - to get props for our methods
+  function Options(props) {
+    var _this;
+
     _classCallCheck(this, Options);
 
-    return _super4.apply(this, arguments);
-  }
+    _this = _super4.call(this, props);
+    _this.handleRemoveAll = _this.handleRemoveAll.bind(_assertThisInitialized(_this));
+    return _this;
+  } //method bind close
+
 
   _createClass(Options, [{
-    key: "removeAllButton",
-    value: function removeAllButton() {
-      alert("Soon I will remove it!");
+    key: "handleRemoveAll",
+    value: function handleRemoveAll() {
+      console.log(this.props.options); // alert("Soon I will remove it!");
     }
   }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("button", {
-        onClick: this.removeAllButton
+        onClick: this.handleRemoveAll
       }, "Remove All"), this.props.options.map(function (option) {
         return /*#__PURE__*/React.createElement(Option, {
           key: option,

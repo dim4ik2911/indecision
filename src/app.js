@@ -6,8 +6,13 @@
 // console.log(add(2, 4));
 // console.log(anythingIwant(100, 81));
 
-import isSenior, { isAdult, canDrink } from "./person.js";
+// import isSenior, { isAdult, canDrink } from "./person.js";
 
-console.log(isSenior(66));
-console.log(isAdult(22));
-console.log(canDrink(16));
+// console.log(isSenior(66));
+// console.log(isAdult(22));
+// console.log(canDrink(16));
+import React from "react";
+import ReactDOM from "react-dom";
+
+const template = React.createElement("p", {}, "testing");
+ReactDOM.render(template, document.getElementById("app"));

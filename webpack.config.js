@@ -15,7 +15,7 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.s?css$/i,
         //when one loader use loader when more then use "use"
         use: ["style-loader", "css-loader", "sass-loader"],
       },
